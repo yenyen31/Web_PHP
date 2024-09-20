@@ -32,7 +32,6 @@
         default : 
             echo "학년이 잘못 입력되었어요!";
             break;
-            
 
     }
 

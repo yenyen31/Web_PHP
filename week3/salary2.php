@@ -31,3 +31,5 @@
   echo "주말 여부: " . ($is_weekend ? "주말" : "평일") . "<br>";
   echo "<br>";
   echo "총 급여는 $total_pay 원 입니다.";
+
+?>

@@ -14,7 +14,9 @@
 
     $name = "John";
     echo "Hello, ".$name."!"."<br>";
-    echo 'Hello, $name!';
+    echo "Hello, $name!";
+
+
 
 
 ?>

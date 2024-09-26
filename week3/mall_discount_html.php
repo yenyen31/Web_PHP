@@ -15,6 +15,7 @@
     <input type="submit" value="계산하기">
 </form>
 
+
 <?php
 if($_SERVER["REQUEST_METHOD"]=="POST"){
   // 폼에서 입력된 데이터 받기

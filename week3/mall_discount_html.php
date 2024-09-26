@@ -40,9 +40,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 
   // 총 구매 금액에 따른 추가 할인 적용 (if문 사용)
-  if ($total_amount >= 200000){
+  if ($price >= 200000){
     $discount_rate += 0.05; // 20만원 이상 구매 시 5% 추가 할인
-  } elseif ($total_amount >= 100000) {
+  } elseif ($price >= 100000) {
     $discount_rate += 0.03; // 10만원 이상 구매 시 3% 추가 할인
   }
 
@@ -52,23 +52,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   }
 
   // 최종 결제 금액 계산
-  $discount_amount = $total_amount * $discount_rate;
-  $final_amount = $total_amount - $discount_amount;
+  $discount_amount = $price * $discount_rate;
+  $final_price = $price - $discount_amount;
 
   // 10만원 이상 구매 시 포인트 적립 (if문 사용)
-  if ($final_amount >= 100000){
-    $points = $final_amount * 0.02; // 2% 적립
-  } else {
-    $points = 0; // 포인트 적립 없음
-  }
+  $points = ($final_price >= 100000) ? $final_price * 0.02 : 0;
 
   // 결과 출력
-  echo "회원 등급: {$membership}<br>";
-  echo "총 구매 금액: {$total_amount}원<br>";
-  echo "적용된 할인율: " . ($discount_rate * 100) . "%<br>";
-  echo "할인 금액: {$discount_amount}원 <br>";
-  echo "최종 결제 금액: {$final_amount}원<br>";
-  echo "적립 포인트: {$points}점<br>";
+  echo "원래 가격: " . number_format($price) . "원<br>";
+  echo "적용된 할인율: " . number_format($discount_rate * 100) . "%<br>";
+  echo "할인 금액: " . number_format($discount_amount) . "원<br>";
+  echo "최종 결제 금액: " . number_format($final_price) . "원<br>";
+  echo "적립 포인트: " . number_format($points) . "점<br>";
 
 }
 

@@ -13,49 +13,37 @@
         - 기타: 잘못된 이동수단입니다.
     */ 
 
-    $is_weekend = "주말";
-    $trans = "택시";
-    
+    // 사용자 입력
+    $day_type = "주말"; // 주말 또는 평일
+    $transport = "택시"; // 버스, 지하철, 택시 중 선택
 
-    if($is_weekend="주말"){
-
-        switch ($trans) {
-            case '버스': // 버스
-                echo "이동수단: 버스";
-                $fee = 1200 * 1.1;
-                break;
-            
-            case '지하철': // 지하철
-                echo "이동수단: 지하철";
-                $fee = 1250 * 1.1;
-                break;
-    
-            case '택시': // 택시
-                echo "이동수단: 택시";
-                $fee = 8000 * 1.1;
-                break;
-        }
-
-        echo ", 최종 요금: $fee 원입니다.";
-
+    // 주말인지 평일인지에 따라 요금 추가 여부 결정 (if문 사용)
+    if($day_type == "주말"){
+        $extra_fee = 1.1; // 주말에 10% 추가
+    }
+    else{
+        extra_fee = 1.0; // 평일은 추가 요금 없음
     }
 
-    else{ // 평일
-        switch ($trans) {
-            case '버스': // 버스
-                echo "이동수단: 버스";
-                $fee = 1200;
-                break;
-            
-            case '지하철': // 지하철
-                echo "이동수단: 지하철";
-                $fee = 1250;
-                break;
-    
-            case '택시': // 택시
-                echo "이동수단: 택시 : ";
-                $fee = 8000;
-                break;
-        }
+    // 이동 수단에 따른 기본 요금 (switch문 사용)
+    switch ($transport) {
+        case "버스":        
+            $base_fare = 1200;
+            break;
+        case "지하철":
+            $base_fare = 1250;
+            break;
+        case "택시":
+            $base_fare = 8000;
+            break;
+        
+        default:
+            echo "잘못된 이동 수단입니다.";
+            exit;
     }
+
+    // 최종 요금 계산
+    $total_fare = $base_fare * $extra_fee;
+    echo "이동 수단: {$transport}, 최종 요금: {$total_fare}원입니다.";
+
 ?>

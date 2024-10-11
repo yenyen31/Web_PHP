@@ -2,11 +2,13 @@
 <!-- http://localhost/6/board1.php?table=free -->
 
 <html>
+
 <head>
     <meta charset="utf-8">
 </head>
+
 <body>
-<?php
+    <?php
     // URL 파라미터에서 'table' 값을 가져옴
     $table = $_GET["table"];
 
@@ -20,8 +22,9 @@
     } else {
         $board_title = "문의게시판";  // 그 외의 경우
     }
-?>
+    ?>
     <!-- 설정된 게시판 제목을 출력 -->
-    <h1><?= $board_title?></h1>
+    <h1><?= $board_title ?></h1>
 </body>
+
 </html>

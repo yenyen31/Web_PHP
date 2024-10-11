@@ -1,0 +1,24 @@
+<!-- 체크박스(취미) 입력 처리 -->
+
+<html>
+<head>
+    <meta charset="utf-8"> <!-- 문서의 인코딩을 UTF-8로 설정하여 한글이 깨지지 않도록 설정 -->
+    <link href="style.css" rel="stylesheet"> <!-- 외부 CSS 파일 'style.css'를 불러와 스타일을 적용 -->
+</head>
+<body>
+    <!-- 사용자의 취미 선택을 받는 폼 -->
+    <form name="form1" method="post" action="view5.php"> <!-- POST 방식으로 데이터를 view5.php로 전송 -->
+        <h3>당신의 취미는?</h3>
+        <ul>
+            <!-- 사용자가 선택한 취미는 배열로 전달됨 (hobby[]) -->
+            <li>영화감상 <input type="checkbox" name="hobby[]" value="영화감상"></li> <!-- 영화감상 선택 -->
+            <li>맛집탐방 <input type="checkbox" name="hobby[]" value="맛집탐방" checked></li> <!-- 기본으로 체크된 맛집탐방 -->
+            <li>독서 <input type="checkbox" name="hobby[]" value="독서"></li> <!-- 독서 선택 -->
+            <li>요가 <input type="checkbox" name="hobby[]" value="요가"></li> <!-- 요가 선택 -->
+            <li>축구 <input type="checkbox" name="hobby[]" value="축구"></li> <!-- 축구 선택 -->
+            <!-- 제출 버튼, 폼 데이터를 서버로 전송 -->
+            <li><input type="submit" value="확인"></li>
+        </ul>
+    </form>
+</body>
+</html>

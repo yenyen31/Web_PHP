@@ -1,0 +1,27 @@
+<!-- 체크박스(이메일) 입력 처리 -->
+
+<html>
+<head>
+    <meta charset="utf-8"> <!-- 문서의 인코딩을 UTF-8로 설정하여 한글이 깨지지 않도록 함 -->
+    <link href="style.css" rel="stylesheet"> <!-- 외부 CSS 파일 'style.css'를 불러와 스타일을 적용 -->
+</head>
+<body>
+    <!-- 이메일 입력 폼 -->
+    <form name="form1" method="post" action="view6.php"> <!-- POST 방식으로 데이터를 view6.php로 전송 -->
+        <ul>
+            <!-- 이메일 입력 필드 및 선택 박스 -->
+            <li>
+                이메일 : <input type="text" name="email1"> @ <!-- 사용자가 입력할 이메일의 첫 번째 부분 -->
+                <select name="email2"> <!-- 이메일 도메인 선택 드롭다운 메뉴 -->
+                    <option value="" selected>선택하세요!</option> <!-- 기본 선택 옵션 -->
+                    <option value="naver.com">naver.com</option> <!-- naver.com 도메인 선택 -->
+                    <option value="google.com">gmail.com</option> <!-- gmail.com 도메인 선택 -->
+                    <option value="hanmail.net">hanmail.net</option> <!-- hanmail.net 도메인 선택 -->
+                </select>
+            </li>
+            <!-- 제출 버튼 -->
+            <li><input type="submit" value="확인"></li>
+        </ul>
+    </form>
+</body>
+</html>

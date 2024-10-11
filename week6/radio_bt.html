@@ -1,17 +1,23 @@
+<!-- 라디오 버튼 텍스트 입력 처리 -->
+
 <html>
 <head>
-    <meta charset="utf-8">
-    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8"> <!-- 문서의 인코딩을 UTF-8로 설정하여 한글이 깨지지 않도록 설정 -->
+    <link href="style.css" rel="stylesheet"> <!-- 외부 CSS 파일 'style.css'를 불러와 스타일을 적용 -->
 </head>
 <body>
-    <form name="form1" method="post" action="view4.php">
+    <!-- 성별과 이메일 수신 여부를 선택하는 폼 -->
+    <form name="form1" method="post" action="view4.php"> <!-- POST 방식으로 데이터를 view4.php로 전송 -->
         <ul>
-            <li>성별 : 남성 <input type="radio" name="gender" value="남" checked>
-                     여성 <input type="radio" name="gender" value="여">
+            <!-- 성별 선택 라디오 버튼 -->
+            <li>성별 : 남성 <input type="radio" name="gender" value="남" checked> <!-- 남성 선택, 기본값으로 체크 -->
+                     여성 <input type="radio" name="gender" value="여"> <!-- 여성 선택 -->
             </li>
-            <li>이메일 : 수신 <input type="radio" name="email_ok" value="예">
-                        비수신 <input type="radio" name="email_ok" value="아니오" checked>
+            <!-- 이메일 수신 여부 선택 라디오 버튼 -->
+            <li>이메일 : 수신 <input type="radio" name="email_ok" value="예"> <!-- 이메일 수신 동의 -->
+                        비수신 <input type="radio" name="email_ok" value="아니오" checked> <!-- 기본값으로 비수신 선택 -->
             </li>
+            <!-- 제출 버튼, 폼 데이터를 서버로 전송 -->
             <li><input type="submit" value="확인"></li>
         </ul>
     </form>

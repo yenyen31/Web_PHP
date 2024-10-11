@@ -1,3 +1,5 @@
+<!-- 파일 업로드 입력 처리 -->
+
 <html>
 
 <head>
@@ -8,7 +10,7 @@
 <body>
     <?php
     // 파일 저장 위치를 설정
-    $file_dir = "C:\\xampp\\htdocs\\6\\data\\";
+    $file_dir = "/Applications/XAMPP/xamppfiles/htdocs/uploads/";
 
     // 업로드된 파일의 전체 경로를 생성
     $file_path = $file_dir . $_FILES["upload"]["name"];  // 파일 이름을 포함한 풀 패스
@@ -16,7 +18,7 @@
     // 파일을 지정된 경로로 이동시키는 함수
     if (move_uploaded_file($_FILES["upload"]["tmp_name"], $file_path)) {  // 파일 저장 성공 시
         // 이미지 경로를 설정
-        $img_path = "data\\" . $_FILES["upload"]["name"];
+        $img_path = "/Applications/XAMPP/xamppfiles/htdocs/uploads/" . $_FILES["upload"]["name"];
     ?>
         <ul>
             <!-- 업로드된 이미지를 보여줌 -->

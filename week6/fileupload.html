@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 외부 스타일시트 연결 -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 파일 업로드 및 설명 입력을 위한 폼 -->
+    <form name="form1" method="post" action="view8.php" enctype="multipart/form-data">
+        <!-- 파일 크기 제한을 위한 숨겨진 입력 필드 -->
+        <input type="hidden" name="max_file_size" value="2000000">
+        <ul>
+            <!-- 파일 업로드 필드 -->
+            <li>이미지 업로드 : <input type="file" name="upload"></li>
+            <!-- 설명 입력 필드 -->
+            <li>설명 : <textarea name="comment" rows="3" cols="60"></textarea></li>
+            <!-- 제출 버튼 -->
+            <li><input type="submit" value="확인"></li>
+        </ul>
+    </form>
+</body>
+</html>

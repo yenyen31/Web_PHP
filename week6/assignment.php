@@ -40,21 +40,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       die("JPG, PNG, GIF 파일만 업로드 가능합니다.");
     }
 
-    // 파일 크기 체크 (최대 2MB)
-    if ($fileSize > 2 * 1024 * 1024) {
-      die("파일 크기는 2MB 이하이어야 합니다.");
+    // 파일 크기 체크 (최대 10MB로 수정)
+    if ($fileSize > 10 * 1024 * 1024) {
+      die("파일 크기는 10MB 이하이어야 합니다.");
     }
 
     // 파일 저장
-    // 여기서 파일 업로드에 자꾸 실패하는 상황 발생
-    $uploadDir = '/Applications/XAMPP/xamppfiles/htdocs/Web_PHP/week6/data/'; // 업로드 할 디렉토리 정보
-    if (!is_dir($uploadDir)) {
+    $uploadDir = '/Applications/XAMPP/xamppfiles/htdocs/uploads/';
+    /*if (!is_dir($uploadDir)) {
       mkdir($uploadDir, 0777, true);
-    }
+    }*/
     $uploadFilePath = $uploadDir . basename($fileName); // 파일의 최종 저장 경로
     if (!move_uploaded_file($fileTmp, $uploadFilePath)) {
       die("파일 업로드에 실패했습니다.");
     }
+
+    // 웹에서 접근 가능한 경로 설정
+    $webFilePath = '/uploads/' . basename($fileName);
   }
 
   // 입력된 데이터 출력
@@ -64,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   echo "성별: " . htmlspecialchars($gender) . "<br>";
   echo "취미: " . implode(', ', array_map('htmlspecialchars', $hobbies)) . "<br>";
 
-  if (isset($uploadFilePath)) {
-    echo "업로드된 사진:<br><img src='" . htmlspecialchars($uploadFilePath) . "' alt='사진' width='200'><br>";
+  if (isset($webFilePath)) {
+    echo "업로드된 사진:<br><img src='" . htmlspecialchars($webFilePath) . "' alt='사진' width='200'><br>";
   }
 }

@@ -1,12 +1,14 @@
 <html>
+
 <head>
     <meta charset="utf-8">
     <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
     <ul>
         <li>나의 취미 :
-        <?php
+            <?php
             // count: 배열 개수
             $num = count($_POST["hobby"]);
             for ($i = 0; $i < $num; $i++) {
@@ -15,8 +17,9 @@
                     echo ", ";
                 }
             }
-        ?>
+            ?>
         </li>
     </ul>
 </body>
+
 </html>

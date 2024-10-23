@@ -1,7 +1,7 @@
-<?php 
-  // 쇼핑몰 주문 관리 시스템
+<?php
+// 쇼핑몰 주문 관리 시스템
 
-  /* 미션 : 고객들의 주문 정보를 저장하고, 주문 총액, 가장 비싼 주문 찾기, 할인 적용 등의 기능을 구현하는 프로그램을 작성. 
+/* 미션 : 고객들의 주문 정보를 저장하고, 주문 총액, 가장 비싼 주문 찾기, 할인 적용 등의 기능을 구현하는 프로그램을 작성. 
   조건문, 반복문, 배열, 함수를 모두 사용하여 기능 구현
 
 
@@ -40,42 +40,44 @@
   ))
   ); */
 
-  // code
+// code
 
-  // 고객 주문 데이터 배열 초기화
-  $orders = array(
-    array("name" => "홍수", "products" => array(
+// 고객 주문 데이터 배열 초기화
+$orders = array(
+  array("name" => "홍수", "products" => array(
     array("name" => "Laptop", "quantity" => 1, "price" => 900),
     array("name" => "Mouse", "quantity" => 2, "price" => 20)
-    )),
-    array("name" => "게이츠", "products" => array(
+  )),
+  array("name" => "게이츠", "products" => array(
     array("name" => "Keyboard", "quantity" => 1, "price" => 50),
     array("name" => "Monitor", "quantity" => 1, "price" => 150)
-    )),
-    array("name" => "스티브", "products" => array(
+  )),
+  array("name" => "스티브", "products" => array(
     array("name" => "Phone", "quantity" => 1, "price" => 600),
     array("name" => "Charger", "quantity" => 1, "price" => 25)
-    ))
-  );
+  ))
+);
 
-  // 주문 총액 계산 함수
-  function calculateTotal($products){
-    $total = 0;
-    foreach($products as $product){
-      $total += $product["quantity"] * $product["price"];
-    }
-    return $total;
+// 주문 총액 계산 함수
+function calculateTotal($products)
+{
+  $total = 0;
+  foreach ($products as $product) {
+    $total += $product["quantity"] * $product["price"];
   }
+  return $total;
+}
 
-  // 할인 적용 점수
-  function applyDiscount($total){
-    if($total >= 100){
-      return $total * 0.9; // 10% 할인
-    }
-    return $total;
+// 할인 적용 점수
+function applyDiscount($total)
+{
+  if ($total >= 100) {
+    return $total * 0.9; // 10% 할인
   }
+  return $total;
+}
 
-  // 모든 고객의 주문 총액 및 할인 적용된 총액 계산 및 출력
+// 모든 고객의 주문 총액 및 할인 적용된 총액 계산 및 출력
 foreach ($orders as $order) {
   $name = $order["name"];  // 고객의 이름 추출
   $products = $order["products"];  // 주문한 상품 목록 추출
@@ -93,19 +95,14 @@ $most_expensive_product = null;
 $highest_price = 0;
 
 foreach ($orders as $order) {
-    foreach ($order["products"] as $product) {
-        if ($product["price"] > $highest_price) {
-            $highest_price = $product["price"];
-            $most_expensive_product = $product;
-        }
+  foreach ($order["products"] as $product) {
+    if ($product["price"] > $highest_price) {
+      $highest_price = $product["price"];
+      $most_expensive_product = $product;
     }
+  }
 }
 
 if ($most_expensive_product) {
-    echo "가장 비싼 제품: " . $most_expensive_product["name"] . " - $" . $highest_price;
+  echo "가장 비싼 제품: " . $most_expensive_product["name"] . " - $" . $highest_price;
 }
-
-?>
-
-
-

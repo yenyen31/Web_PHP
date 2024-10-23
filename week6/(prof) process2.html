@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"> <!-- 페이지의 문서 인코딩을 UTF-8로 설정하여 한글을 포함한 다국어 문자를 지원 -->
+    <title>회원 가입</title> <!-- 브라우저 탭에 표시될 페이지 제목 설정 -->
+</head>
+<body>
+    <h2>회원 가입</h2> <!-- "회원 가입" 제목을 페이지에 출력 -->
+    
+    <!-- POST 방식으로 데이터를 전송하고, 파일을 업로드할 수 있도록 enctype 설정 -->
+    <form method="POST" action="(prof) process2.php" enctype="multipart/form-data">
+        
+        <!-- 아이디 입력 필드 (required는 필수 입력) -->
+        아이디: <input type="text" name="username" required><br><br>
+        
+        <!-- 비밀번호 입력 필드 -->
+        비밀번호: <input type="password" name="password" required><br><br>
+        
+        <!-- 비밀번호 확인 입력 필드 -->
+        비밀번호 확인: <input type="password" name="confirm_password" required><br><br>
+        
+        <!-- 자기소개 입력 필드 (최대 200자) -->
+        자기소개 (최대 200자): <br>
+        <textarea name="intro" rows="5" cols="40" maxlength="200"></textarea><br><br>
+        
+        <!-- 성별 선택을 위한 라디오 버튼 (남성 또는 여성 중 하나만 선택 가능, required는 필수 선택) -->
+        성별: <br>
+        <input type="radio" name="gender" value="male" required> 남성
+        <input type="radio" name="gender" value="female"> 여성<br><br>
+        
+        <!-- 취미 선택을 위한 체크박스 (최소 2개 이상 선택 필요) -->
+        취미 (최소 2개 선택): <br>
+        <input type="checkbox" name="hobby[]" value="운동"> 운동
+        <input type="checkbox" name="hobby[]" value="독서"> 독서
+        <input type="checkbox" name="hobby[]" value="여행"> 여행
+        <input type="checkbox" name="hobby[]" value="음악"> 음악<br><br>
+        
+        <!-- 프로필 사진 업로드 필드 (JPG, PNG, GIF 형식만 허용, 최대 2MB, required는 필수 업로드) -->
+        프로필 사진 (JPG, PNG, GIF, 최대 2MB): 
+        <input type="file" name="profile_pic" accept="image/*" required><br><br>
+        
+        <!-- 가입하기 버튼 (폼 제출 버튼) -->
+        <input type="submit" value="가입하기">
+    </form>
+</body>
+</html>

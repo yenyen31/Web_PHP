@@ -74,7 +74,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = ($num1 * $num2) / gcd($num1, $num2);
             break;
         default:
-            // 잘못된 연산자가 선택된 경우 처리
             echo "유효한 연산자를 선택하세요.";
             exit;
     }

@@ -8,7 +8,9 @@
 
 <!DOCTYPE html>
 <html lang="ko">
+
 <body>
+    <!-- 변환할 값을 입력받는 폼 -->
     <form method="POST" action="">
         <label for="num">변환할 값을 입력하세요:</label>
         <input type="number" step="any" id="num" name="num" required>
@@ -29,10 +31,11 @@
     </form>
 
     <?php
+    // 폼이 제출되었을 때 POST 방식으로 처리
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $num = floatval($_POST["num"]);  // 입력 값을 소수점까지 받을 수 있도록 floatval() 사용
-        $conversion = $_POST["conversion"];
-        $result = 0;
+        $conversion = $_POST["conversion"]; // 선택된 변환 방식
+        $result = 0; // 결과값 저장할 변수
 
         // 선택한 변환 방식에 따른 처리
         switch ($conversion) {
@@ -52,7 +55,7 @@
                 $result = ($num * 9 / 5) + 32;  // 섭씨를 화씨로 변환
                 echo "<p>결과: $num 섭씨 = $result 화씨</p>";
                 break;
-            // 응용 7에서 추가한 부분 !
+                // 응용 7에서 추가한 부분 !
             case "m_to_y":
                 $result = $num * 1.09361;  // 미터를 야드로 변환
                 echo "<p>결과: $num 미터 = $result 야드</p>";
@@ -76,4 +79,5 @@
     }
     ?>
 </body>
+
 </html>

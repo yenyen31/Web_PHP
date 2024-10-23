@@ -59,8 +59,9 @@ if (!in_array($file['type'], $allowed_types)) {
 // 업로드할 파일의 최종 경로를 설정 (업로드 디렉토리 + 파일 이름)
 $profile_pic_path = $upload_dir . basename($file['name']);
 
+
+// 파일 업로드에 성공했으며 오류가 없는 경우
 if (empty($errors) && move_uploaded_file($file['tmp_name'], $profile_pic_path)) {
-    // 파일 업로드에 성공했으며 오류가 없는 경우
 
     // 사용자 데이터를 세션에 저장
     $_SESSION['user'] = array(
@@ -76,14 +77,14 @@ if (empty($errors) && move_uploaded_file($file['tmp_name'], $profile_pic_path)) 
     echo "아이디: $username <br>";         // 입력된 아이디 출력
     echo "자기소개: $intro <br>";          // 입력된 자기소개 출력
     echo "성별: $gender <br>";             // 선택된 성별 출력
-    
+
     // 선택된 취미 목록 출력 (쉼표로 구분)
     echo "취미: " . implode(", ", $hobbies) . "<br>";
-    
+
     // 업로드된 프로필 사진을 출력 (이미지 태그 사용)
     echo "<br>프로필 사진:<br>";
     echo "<img src='$profile_pic_path' width='200'>"; // 200px 크기로 이미지 출력
-    
+
 } else {
     // 오류가 있을 경우 오류 메시지 출력
     echo "<h2>오류가 발생했습니다:</h2>";
@@ -92,4 +93,3 @@ if (empty($errors) && move_uploaded_file($file['tmp_name'], $profile_pic_path)) 
         echo "<p>$error</p>";
     }
 }
-?>

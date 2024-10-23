@@ -16,7 +16,7 @@
 
             // 선택한 취미를 하나씩 출력
             for ($i = 0; $i < $num; $i++) {
-                echo htmlspecialchars($_POST["hobby"][$i], ENT_QUOTES, 'UTF-8'); // hobby 배열의 각 요소를 출력
+                echo $_POST["hobby"][$i]; // hobby 배열의 각 요소를 출력
                 if ($i != $num - 1) { // 마지막 취미 항목이 아니면 쉼표를 추가
                     echo ", ";
                 }

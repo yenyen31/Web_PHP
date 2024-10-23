@@ -15,7 +15,7 @@
 
     <ul>
         <!-- 사용자가 입력한 'content' 값을 출력 -->
-        <li>글 내용 : <?= htmlspecialchars($content, ENT_QUOTES, 'UTF-8') ?></li> <!-- htmlspecialchars 함수로 특수문자 처리를 통해 XSS 공격 방지 -->
+        <li>글 내용 : <?= $content ?></li>
     </ul>
 </body>
 

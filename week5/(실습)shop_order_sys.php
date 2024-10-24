@@ -44,17 +44,23 @@
 
 // 고객 주문 데이터 배열 초기화
 $orders = array(
+  /// 고객1: 홍수
   array("name" => "홍수", "products" => array(
-    array("name" => "Laptop", "quantity" => 1, "price" => 900),
-    array("name" => "Mouse", "quantity" => 2, "price" => 20)
+    // 홍수가 주문한 제품들
+    array("name" => "Laptop", "quantity" => 1, "price" => 900), // 1. 노트북
+    array("name" => "Mouse", "quantity" => 2, "price" => 20)    // 2. 마우스
   )),
+  // 고객2: 게이츠
   array("name" => "게이츠", "products" => array(
-    array("name" => "Keyboard", "quantity" => 1, "price" => 50),
-    array("name" => "Monitor", "quantity" => 1, "price" => 150)
+    // 게이트가 주문한 제품들
+    array("name" => "Keyboard", "quantity" => 1, "price" => 50), // 1. 키보드
+    array("name" => "Monitor", "quantity" => 1, "price" => 150)  // 2. 모니터
   )),
+  // 고객3: 스티브
   array("name" => "스티브", "products" => array(
-    array("name" => "Phone", "quantity" => 1, "price" => 600),
-    array("name" => "Charger", "quantity" => 1, "price" => 25)
+    // 스티브가 주문한 제품들
+    array("name" => "Phone", "quantity" => 1, "price" => 600), // 1. 휴대폰
+    array("name" => "Charger", "quantity" => 1, "price" => 25) // 2. 충전기
   ))
 );
 
@@ -91,7 +97,7 @@ foreach ($orders as $order) {
 }
 
 // 가장 비싼 제품 찾기
-$most_expensive_product = null;
+$most_expensive_product = null; // 어떤 제품도 가장 비싼 제품으로 결정되지 않았기 때문에 null로 설정
 $highest_price = 0;
 
 foreach ($orders as $order) {

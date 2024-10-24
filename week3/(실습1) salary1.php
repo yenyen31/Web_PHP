@@ -12,10 +12,9 @@ echo "시간당 급여<br>";
 echo "- 주간 근무 : 9500원<br>";
 echo "- 야간 근무 : 주간 시급 * 1.5 <br><br>";
 
-$hour_rate = 9500;
-
-$day_night = "주간"; # Q
-$work_time = 8;
+$hour_rate = 9500; // 시급
+$day_night = "주간"; # Q (주간인지 야간인지)
+$work_time = 8;  // 일한 시간
 
 if ($day_night == "주간") {
     $pay = $hour_rate * $work_time;

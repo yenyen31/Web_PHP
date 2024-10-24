@@ -13,7 +13,7 @@ if ($month >= 3 && $month <= 5) { # Q : &&
     $season = "가을";
     echo "{$month}월은 {$season}입니다.";
 } elseif ($month == 12 || $month == 1 || $month == 2) { # Q : ||
-    $season = "겨을";
+    $season = "겨울";
     echo "{$month}월은 {$season}입니다.";
 } else {
     echo "잘못 입력되었습니다!";

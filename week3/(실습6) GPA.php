@@ -32,7 +32,7 @@ echo "학점: $grade <br>";
 // 학점에 따른 평가 (switch문 사용)
 switch ($grade) {
     case 'A':
-        echo "훌룡합니다.";
+        echo "훌륭합니다.";
         break;
 
     case 'B':

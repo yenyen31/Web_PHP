@@ -10,12 +10,13 @@ function isPrime($num)
     }
 
     // 소수인 경우
+    // 2부터 그 수의 제곱근까지 나누어 떨어지는지 확인
     for ($i = 2; $i <= sqrt($num); $i++) {
         if ($num % $i == 0) {
-            return false;
+            return false; // 나누어 떨어지면 소수 X
         }
     }
-    return true;
+    return true; // 나누어 떨어지지 않으면 소수 O
 }
 
 // 전체 합
@@ -25,9 +26,8 @@ $sum = 0;
 for ($i = 1; $i <= 100; $i++) {
     // 소수라면
     if (isPrime($i)) {
-        echo $i . " ";
-        // 결과값에 더하기
-        $sum += $i;
+        echo $i . " "; // 소수 출력
+        $sum += $i;    // 소수 합계에 더하기
     }
 }
 

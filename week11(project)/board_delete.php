@@ -11,8 +11,8 @@ $row = mysqli_fetch_array($result);
 $copied_name = $row["file_copied"];
 
 if ($copied_name) {
-  $file_path = "./data/" . $copied_name;
-  unlink($file_path);
+	$file_path = "./data/" . $copied_name;
+	unlink($file_path);
 }
 
 $sql = "delete from board where num = $num";

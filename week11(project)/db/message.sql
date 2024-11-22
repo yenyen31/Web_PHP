@@ -1,10 +1,9 @@
-create table message (
-   num int not null auto_increment,
-   send_id char(20) not null,
-   rv_id char(20) not null,
-   subject char(200) not null,
-   content text not null, 
-   regist_day char(20),
-   primary key(num)
+CREATE TABLE MESSAGE (
+   NUM        INT NOT NULL,
+   SEND_ID    CHAR(20) NOT NULL,
+   RV_ID      CHAR(20) NOT NULL,
+   SUBJECT    CHAR(200) NOT NULL,
+   CONTENT    TEXT NOT NULL,
+   REGIST_DAY CHAR(20),
+   PRIMARY KEY ( NUM )
 );
-

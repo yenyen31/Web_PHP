@@ -1,22 +1,19 @@
 <?php
-    $num = $_GET["num"];
-    $page = $_GET["page"];
+$num = $_GET["num"];
+$page = $_GET["page"];
 
-    $subject = $_POST["subject"];
-    $content = $_POST["content"];
-          
-    $con = mysqli_connect("localhost", "user1", "12345", "sample");
-    $sql = "update board set subject='$subject', content='$content' ";
-    $sql .= " where num=$num";
-    mysqli_query($con, $sql);
+$subject = $_POST["subject"];
+$content = $_POST["content"];
 
-    mysqli_close($con);     
+$con = mysqli_connect("localhost", "user1", "12345", "sample");
+$sql = "update board set subject='$subject', content='$content' ";
+$sql .= " where num=$num";
+mysqli_query($con, $sql);
 
-    echo "
+mysqli_close($con);
+
+echo "
 	      <script>
 	          location.href = 'board_list.php?page=$page';
 	      </script>
 	  ";
-?>
-
-   

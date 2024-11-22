@@ -24,7 +24,7 @@
       if (!$id) {
          echo ("<li>아이디를 입력해 주세요!</li>");
       } else {
-         $con = mysqli_connect("localhost", "user1", "1111", "sample");
+         $con = mysqli_connect("localhost", "user1", "12345", "sample");
 
 
          $sql = "select * from members where id='$id'";

@@ -9,7 +9,17 @@ $email = $email1 . "@" . $email2;
 $regist_day = date("Y-m-d (H:i)");  // 현재의 '년-월-일-시-분'을 저장
 
 
-$con = mysqli_connect("localhost", "user1", "1111", "sample");
+$con = mysqli_connect("localhost", "user1", "12345", "sample");
+
+## 오류 확인
+if (mysqli_connect_errno()) {
+	echo "DB 연결 실패: " . mysqli_connect_error();
+	exit;
+}
+if (!mysqli_query($con, $sql)) {
+	echo "쿼리 오류: " . mysqli_error($con);
+	exit;
+}
 
 $sql = "insert into members(id, pass, name, email, regist_day, level, point) ";
 $sql .= "values('$id', '$pass', '$name', '$email', '$regist_day', 9, 0)";
